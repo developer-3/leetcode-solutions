@@ -5,19 +5,19 @@ class MinStack:
         self.stack = []
 
     def push(self, val: int) -> None:
-        self.currMin.append(val)
-        self.currMin = sorted(self.currMin)
         self.stack.append(val)
+        val = min(val, self.currMin[-1] if self.currMin else val)
+        self.currMin.append(val)
 
     def pop(self) -> None:
-        popped = self.stack.pop()
-        self.currMin.remove(popped)
+        self.stack.pop()
+        self.currMin.pop()
 
     def top(self) -> int:
         return self.stack[-1]
 
     def getMin(self) -> int:
-        return self.currMin[0]
+        return self.currMin[-1]
 
 
 # Your MinStack object will be instantiated and called as such:
