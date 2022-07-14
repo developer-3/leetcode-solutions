@@ -3,13 +3,11 @@ class Solution:
         numSet = set(nums)
         res = 0
         for n in nums:
-            if n-1 in numSet:
-                continue
-            
-            curLen = 0
-            while n+curLen in numSet:
-                curLen += 1
+            if n-1 not in numSet:
+                curLen = 0
+                while n+curLen in numSet:
+                    curLen += 1
 
-            res = max(res, curLen)
+                res = max(res, curLen)
             
         return res
