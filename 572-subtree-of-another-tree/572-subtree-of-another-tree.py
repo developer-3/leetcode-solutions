@@ -18,13 +18,11 @@ class Solution:
             if not root:
                 return
             
-            r = dfs(root.right)
-            l = dfs(root.left)
+            r, l = dfs(root.right), dfs(root.left)
             if r or l:
                 return True
             
             if root.val == subRoot.val:
                 return isSameTree(root, subRoot)
-            return
             
         return dfs(root)
