@@ -12,11 +12,5 @@ class Solution:
                 l += 1
             else:
                 r -= 1
-            
-        # for i in range(len(height)):
-        #     for j in range(i+1, len(height)):
-        #         w = j - i
-        #         h = min(height[i], height[j])
-        #         maximum = max(maximum, w*h)
                 
         return maximum
