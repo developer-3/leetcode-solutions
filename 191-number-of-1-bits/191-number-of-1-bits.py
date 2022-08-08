@@ -1,6 +1,8 @@
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        n = bin(n)[2:]
-
+        x = 0
         
-        return sum([int(x) for x in list(n)])
+        for bit in list(bin(n)[2:]):
+            x += int(bit) & 1
+            
+        return x
