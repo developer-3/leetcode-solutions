@@ -11,10 +11,10 @@ class Solution:
         
         hashmap = {}
         
-        def dfs(n, visited):
+        def dfs(n):
             if n is None:
                 return None
-            visited.add(n.val)
+
             new = Node(n.val)
             hashmap[n] = new
             
@@ -22,11 +22,11 @@ class Solution:
             
             for i in n.neighbors:
                 if i not in hashmap:
-                    new.neighbors.append(dfs(i, visited))
+                    new.neighbors.append(dfs(i))
                 else:
                     new.neighbors.append(hashmap[i])
             
             return new
         
-        head = dfs(node, set())
+        head = dfs(node)
         return head
