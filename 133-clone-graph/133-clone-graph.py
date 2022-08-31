@@ -21,7 +21,7 @@ class Solution:
             neighbors = []
             
             for i in n.neighbors:
-                if i.val not in visited:
+                if i not in hashmap:
                     new.neighbors.append(dfs(i, visited))
                 else:
                     new.neighbors.append(hashmap[i])
